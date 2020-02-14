@@ -44,3 +44,5 @@ class Solution:
 
 d = Solution().shortestWay
 print(d("xyz","xyz"))
+
+
