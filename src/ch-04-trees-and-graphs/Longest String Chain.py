@@ -12,7 +12,7 @@
 ##i.e EXACTLY one letter anywhere in word1
 
 ##https://leetcode.com/problems/longest-string-chain/discuss/506861/Python-or-Time-5-Space-100-using-Kadane's
-
+##https://www.youtube.com/watch?v=86CQq3pKSUw
 
 
 class Solution:
