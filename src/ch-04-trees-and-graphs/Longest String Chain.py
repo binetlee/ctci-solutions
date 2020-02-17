@@ -13,7 +13,26 @@
 
 ##https://leetcode.com/problems/longest-string-chain/discuss/506861/Python-or-Time-5-Space-100-using-Kadane's
 ##https://www.youtube.com/watch?v=86CQq3pKSUw
-
+from _collections import *
 
 class Solution:
-    def longestStrChain(self, words: List[str]) -> int:
+    #def longestStrChain(self, words: List[str]) -> int:
+
+
+    def longestStrChain(self, arr):
+        arr.sort(key=len)
+        word_dict = defaultdict(int)
+
+        total_max = 0
+
+        for w in arr:
+            for i in range(len(w)):
+                wc = w[:i] + w[i + 1:]
+                word_dict[w] = max(word_dict[wc] + 1, word_dict[w])
+            total_max = max(total_max, word_dict[w])
+
+        return total_max
+
+
+d = Solution().longestStrChain
+print(d(["ab","ba","aba","baa","baca","bacda"]))
