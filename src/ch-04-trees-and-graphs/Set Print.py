@@ -7,17 +7,21 @@ from typing import List
 
 
 class Solution:
-    def longestStrChain(self, input: List[str]):
+    def longestStrChain(self, source: str):
 
-        feed = defaultdict(int)
+        input = source.split(",")
+        count = defaultdict(int)
 
         for word in input:
-                feed[word] += 1
-        a = sorted(feed.items(), key=lambda x: x[1], reverse=True)
+                count[word] += 1
+        ##YMU by not knowing that you can sort via a parameter, remember to use lambda
+        ##also remember reverse option
+        ##Also count.items() lists it essentially
+        a = sorted(count.items(), key=lambda x: x[1], reverse=True)
         print(a)
 
 
 
 
 d = Solution().longestStrChain
-print(d(["pay","development","squads","daily process","education","celebration","vacation","cross team","building","wfh","wfh","benefits","benefits","education","leadership communication", "development"]))
+print(d("pay,1on1,bp development,squads,process,om,celebration,holidays, team communication,building,building,development,benefits,education"))
